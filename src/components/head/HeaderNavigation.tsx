@@ -10,11 +10,11 @@ const HeaderNavigation = () => {
   const themeContext = useContext(ThemeContext);
 
   const menuItems = [
-    { path: '/', label: 'Principal', icon: FaHome },
-    { path: '/institucional', label: 'Institucional', icon: FaUniversity },
-    { path: '/fotos', label: 'Fotos', icon: FaImages },
-    { path: '/inscripciones', label: 'Inscripciones 2024', icon: FaUserGraduate },
-    { path: '/cuotas', label: 'Cuotas 2024', icon: FaMoneyBillWave },
+    { path: '/', label: 'Inicio', icon: FaHome },
+    { path: '/proyectos', label: 'Proyectos', icon: FaImages },
+    { path: '/matematicas', label: 'Matemáticas', icon: FaUniversity },
+    { path: '/desarrollo-movil', label: 'Desarrollo Móvil', icon: FaUserGraduate },
+    { path: '/certificaciones', label: 'Certificaciones', icon: FaMoneyBillWave },
     { path: '/contacto', label: 'Contacto', icon: FaEnvelope }
   ];
 

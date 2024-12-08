@@ -1,50 +1,93 @@
-# React + TypeScript + Vite
+### **Perfil Profesional**  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Desarrollador Frontend Especializado en Desarrollo Móvil**  
+Apasionado por crear interfaces atractivas, funcionales y por innovar en la experiencia del usuario. Combina habilidades en desarrollo móvil con un sólido conocimiento en matemáticas y herramientas especializadas para resolver problemas complejos e impactar positivamente la vida de los usuarios.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Motivaciones**  
+- Crear aplicaciones móviles y frontend que transformen la experiencia de los usuarios.  
+- Innovar en el diseño y funcionalidad de interfaces.  
+- Integrar matemáticas avanzadas y tecnología en soluciones prácticas.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### **Habilidades y Tecnologías**  
 
-- Configure the top-level `parserOptions` property like this:
+#### **Desarrollo Frontend**  
+- **Lenguajes y Frameworks:**  
+  HTML5, CSS3, Bootstrap, Tailwind CSS, JavaScript, TypeScript, React, Next.js.  
+- **Herramientas:**  
+  Git/GitHub, Jest, GraphQL.  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### **Desarrollo Móvil con Flutter**  
+- **Lenguaje:** Dart.  
+- **Frameworks y Estado:** Flutter, Provider, GetX, Bloc.  
+- **Testing y Backend:** Firebase, SQLite, Hive, Flutter Test, Integration Test.  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+#### **Desarrollo Backend**  
+- **Lenguajes:** Node.js, Python, C++.  
+- **Frameworks:** Express.js, Django, Flask, Spring Boot, Gin.  
+- **Bases de Datos:** MongoDB, PostgreSQL, MySQL, Firebase Firestore, SQLite.  
+- **Herramientas:** Docker, Kubernetes, Postman, Swagger.  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+#### **Herramientas Comunes**  
+- **Control de Versiones:** Git, GitHub/GitLab/Bitbucket.  
+- **CI/CD:** Jenkins, CircleCI, Travis CI.  
+- **Colaboración:** Jira, Trello, Asana.  
+- **Documentación:** Markdown, JSDoc, Swagger.  
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### **Matemáticas y Software Científico**  
+- **Documentación:** LaTeX, Scientific WorkPlace.  
+- **Software Matemático:** MATLAB, Maple, Wolfram Alpha, GeoGebra.  
+
+---
+
+### **Proyectos Destacados**  
+1. **Página web para venta de componentes de computadoras**  
+   - *Tecnología:* Laravel.  
+
+2. **Aplicación móvil de servicios a domicilio**  
+   - *Tecnología:* Flutter.  
+
+3. **Juego móvil Tic Tac Toe**  
+   - *Tecnología:* Android y Flutter.  
+
+4. **Paseo virtual de un museo egipcio**  
+   - *Tecnología:* 3D Max.  
+
+5. **Software educativo para nivel primario**  
+   - *Tecnología:* Adobe Director.  
+
+6. **Widgets para Android**  
+   - Ejemplos: Reloj parlante y radios en línea.  
+
+7. **Landing page para una escuela primaria**  
+   - *Tecnología:* React.  
+
+---
+
+### **Formación Académica y Certificaciones**  
+- **Egresado de la carrera de Matemáticas.**  
+- **Estudiante de Ingeniería Informática.**  
+- **Certificaciones:** Cursos en FreeCodeCamp.  
+
+#### **Experiencia Académica y Profesional**  
+- Auxiliar de docencia en Matemáticas: Cálculo 1, Álgebra 1, y Álgebra Lineal y Matricial.  
+- Investigador auxiliar en la Universidad Autónoma Tomás Frías.  
+
+#### **Participaciones Destacadas**  
+- Olimpiadas Matemáticas.  
+- Congresos de la Sociedad Científica de Matemáticas.  
+- Congresos de Ingeniería Informática.  
+
+---
+
+### **Objetivos Profesionales**  
+- Crear aplicaciones que marquen una diferencia en la vida de los usuarios.  
+- Convertirse en un referente en desarrollo móvil con Flutter.  
+- Desarrollar aplicaciones móviles relacionadas con matemáticas, gráficos y cálculos de proyecciones.  
+
+---
+
+¿Hay algo más que desees agregar o ajustar? 😊
