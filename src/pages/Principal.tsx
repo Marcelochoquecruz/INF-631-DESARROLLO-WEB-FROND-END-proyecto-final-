@@ -7,8 +7,8 @@ const Principal = () => {
   return (
     <div>
       {/* Otro contenido específico de la página principal */}
-      <Menu />
       <Contenidop/>
+      
       <Footer/>
     </div>
   );

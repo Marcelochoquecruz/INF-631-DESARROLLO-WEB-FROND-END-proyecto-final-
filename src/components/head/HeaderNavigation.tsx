@@ -1,7 +1,20 @@
 import { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaMoon, FaSun, FaHome, FaUniversity, FaImages, FaUserGraduate, FaMoneyBillWave, FaEnvelope } from 'react-icons/fa';
+import { 
+  FaMoon, 
+  FaSun, 
+  FaHome, 
+  FaUniversity, 
+  FaImages, 
+  FaUserGraduate, 
+  FaMoneyBillWave, 
+  FaEnvelope,
+  FaLightbulb,
+  FaRegLightbulb,
+  FaGlobe,
+  FaRocket
+} from 'react-icons/fa';
 import { ThemeContext } from '../ThemeContext';
 
 const HeaderNavigation = () => {
@@ -34,25 +47,6 @@ const HeaderNavigation = () => {
 
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between py-2">
-          {/* Botón de tema */}
-          <button
-            onClick={themeContext?.toggleTheme}
-            className="p-1 rounded-full
-                     bg-white/80 dark:bg-gray-800/80
-                     hover:bg-white dark:hover:bg-gray-700
-                     transform transition-all duration-300
-                     hover:scale-110 active:scale-95
-                     focus:outline-none focus:ring-2 focus:ring-blue-300
-                     shadow-md backdrop-blur-sm"
-            aria-label="Cambiar tema"
-          >
-            {themeContext?.theme === 'dark' ? (
-              <FaSun className="w-4 h-4 text-yellow-400 animate-spin-slow" />
-            ) : (
-              <FaMoon className="w-4 h-4 text-gray-600 animate-pulse" />
-            )}
-          </button>
-
           {/* Menú de navegación */}
           <motion.nav className="flex-grow" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <motion.ul className="flex flex-wrap justify-center gap-2" layout>
@@ -146,6 +140,25 @@ const HeaderNavigation = () => {
               })}
             </motion.ul>
           </motion.nav>
+
+          {/* Botón de tema */}
+          <button
+            onClick={themeContext?.toggleTheme}
+            className="p-2 rounded-full
+                     bg-white/80 dark:bg-gray-800/80
+                     hover:bg-white dark:hover:bg-gray-700
+                     transform transition-all duration-300
+                     hover:scale-110 active:scale-95
+                     focus:outline-none focus:ring-2 focus:ring-blue-300
+                     shadow-md backdrop-blur-sm"
+            aria-label="Cambiar tema"
+          >
+            {themeContext?.theme === 'dark' ? (
+              <FaRegLightbulb className="w-5 h-5 text-yellow-400 animate-pulse" />
+            ) : (
+              <FaLightbulb className="w-5 h-5 text-gray-600 animate-spin-slow" />
+            )}
+          </button>
         </div>
       </div>
 

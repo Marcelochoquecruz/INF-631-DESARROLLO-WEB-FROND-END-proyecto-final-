@@ -1,64 +1,133 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { 
+  Code, 
+  Smartphone, 
+  Landmark, 
+  Book, 
+  AppWindow, 
+  Globe 
+} from 'lucide-react';
+import { 
+  SiLaravel, 
+  SiFlutter, 
+  SiAndroid, 
+  SiReact 
+} from 'react-icons/si';
 
 const Proyectos = () => {
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
   const proyectos = [
     {
-      nombre: 'Página web para venta de componentes de computadoras',
+      nombre: 'Página web de Componentes PC',
       tecnologia: 'Laravel',
-      descripcion: 'Desarrollo de una plataforma web para la venta de componentes de computadoras.'
+      descripcion: 'Plataforma web para venta de componentes de computadoras.',
+      icon: Code,
+      techIcon: SiLaravel,
+      color: 'from-red-500 to-red-400'
     },
     {
-      nombre: 'Aplicación móvil de servicios a domicilio',
+      nombre: 'App Servicios a Domicilio',
       tecnologia: 'Flutter',
-      descripcion: 'Aplicación móvil que permite solicitar servicios a domicilio de manera sencilla.'
+      descripcion: 'Aplicación móvil para solicitar servicios de manera sencilla.',
+      icon: Smartphone,
+      techIcon: SiFlutter,
+      color: 'from-cyan-500 to-blue-400'
     },
     {
-      nombre: 'Juego móvil Tic Tac Toe',
+      nombre: 'Juego Tic Tac Toe',
       tecnologia: 'Android y Flutter',
-      descripcion: 'Implementación del clásico juego Tic Tac Toe para dispositivos móviles.'
+      descripcion: 'Implementación del clásico juego para dispositivos móviles.',
+      icon: AppWindow,
+      techIcon: SiAndroid,
+      color: 'from-green-500 to-emerald-400'
     },
     {
-      nombre: 'Paseo virtual de un museo egipcio',
+      nombre: 'Paseo Virtual Museo Egipcio',
       tecnologia: '3D Max',
-      descripcion: 'Recorrido virtual por un museo egipcio utilizando modelado 3D.'
+      descripcion: 'Recorrido virtual por un museo egipcio utilizando modelado 3D.',
+      icon: Landmark,
+      techIcon: null,
+      color: 'from-orange-500 to-amber-400'
     },
     {
-      nombre: 'Software educativo para nivel primario',
+      nombre: 'Software Educativo Primaria',
       tecnologia: 'Adobe Director',
-      descripcion: 'Herramienta educativa interactiva diseñada para estudiantes de primaria.'
+      descripcion: 'Herramienta educativa interactiva para estudiantes.',
+      icon: Book,
+      techIcon: null,
+      color: 'from-purple-500 to-indigo-400'
     },
     {
       nombre: 'Widgets para Android',
       tecnologia: 'Android',
-      descripcion: 'Desarrollo de widgets útiles como un reloj parlante y radios en línea.'
+      descripcion: 'Desarrollo de widgets útiles como reloj parlante y radios en línea.',
+      icon: Smartphone,
+      techIcon: SiAndroid,
+      color: 'from-lime-500 to-green-400'
     },
     {
-      nombre: 'Landing page para escuela primaria',
+      nombre: 'Landing Page Escuela',
       tecnologia: 'React',
-      descripcion: 'Página web institucional para una escuela primaria.'
+      descripcion: 'Página web institucional para escuela primaria.',
+      icon: Globe,
+      techIcon: SiReact,
+      color: 'from-sky-500 to-blue-400'
     }
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Proyectos Destacados</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {proyectos.map((proyecto, index) => (
-          <div 
-            key={index} 
-            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition-all duration-300 hover:scale-105"
-          >
-            <h2 className="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400">
-              {proyecto.nombre}
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-2">
-              <strong>Tecnología:</strong> {proyecto.tecnologia}
-            </p>
-            <p className="text-gray-500 dark:text-gray-400">
-              {proyecto.descripcion}
-            </p>
-          </div>
-        ))}
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-gray-800 py-16">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white">
+          Proyectos Destacados
+        </h1>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {proyectos.map((proyecto, index) => {
+            const Icon = proyecto.icon;
+            const TechIcon = proyecto.techIcon;
+
+            return (
+              <div 
+                key={index} 
+                onMouseEnter={() => setHoveredProject(index)}
+                onMouseLeave={() => setHoveredProject(null)}
+                className={`
+                  ${proyecto.color} bg-gradient-to-br
+                  rounded-3xl p-6 shadow-xl 
+                  text-white 
+                  transform transition-all duration-300
+                  ${hoveredProject === index ? 'scale-105 rotate-1' : 'hover:scale-105'}
+                `}
+              >
+                <div className="flex items-center mb-4">
+                  <Icon className="w-8 h-8 mr-4 opacity-80" />
+                  <h2 className="text-xl font-semibold">{proyecto.nombre}</h2>
+                </div>
+                
+                <div className="flex items-center mb-3">
+                  {TechIcon && <TechIcon className="w-5 h-5 mr-2" />}
+                  <p className="text-sm font-medium opacity-90">
+                    {proyecto.tecnologia}
+                  </p>
+                </div>
+                
+                <p className="text-sm opacity-80 mb-4">
+                  {proyecto.descripcion}
+                </p>
+                
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-xs font-medium bg-white/20 px-3 py-1 rounded-full">
+                    Ver Detalles
+                  </span>
+                  <span className="text-xs opacity-70">
+                    Proyecto {index + 1}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
