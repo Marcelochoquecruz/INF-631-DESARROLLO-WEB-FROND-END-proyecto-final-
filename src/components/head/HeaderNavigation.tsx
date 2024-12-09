@@ -25,7 +25,7 @@ const HeaderNavigation = () => {
   const menuItems = [
     { path: '/', label: 'Inicio', icon: FaHome },
     { path: '/proyectos', label: 'Proyectos', icon: FaImages },
-    { path: '/matematicas', label: 'Matemáticas', icon: FaUniversity },
+    { path: '/tecnologias', label: 'Tecnologías', icon: FaUniversity },
     { path: '/desarrollo-movil', label: 'Desarrollo Móvil', icon: FaUserGraduate },
     { path: '/certificaciones', label: 'Certificaciones', icon: FaMoneyBillWave },
     { path: '/contacto', label: 'Contacto', icon: FaEnvelope }
