@@ -36,6 +36,9 @@ const InteractiveCard = () => {
 
   return (
     <div className="bg-white-90 dark:bg-[#4A00E000 dark:#8E2DE2]/90 rounded-xl shadow-lg p-1 border-2 dark:border-gray-800 w-full max-w-5xl space-y-6 mx-auto">
+      <div className="bg-gradient-to-r from-[#ecebee] via-[#8E2DE2] rounded-full">
+      <h2 className="text-center dark:text-white">Intereces en desarrollo</h2>
+      </div>
       {/* ! Altura de las tarjetas: 
           * w-2/5 establece el ancho al 40% del contenedor
           <div className="w-full max-w-5xl space-y-6 mx-auto">
@@ -46,17 +49,16 @@ const InteractiveCard = () => {
             index: 0,
             images: [fractalImage],
             alt: "Fractal",
-            title: "Fractales",
+            
             onClick: () => handleClick('https://www.wextensible.com/temas/fractal/iterativo.html'),
           },
           {
             index: 0,
             images: [cube],
             alt: "Rubik's Cube",
-            title: "Cubo de Rubik",
-            onClick: () => handleClick('https://magic-cube.vercel.app/'),
+             onClick: () => handleClick('https://magic-cube.vercel.app/'),
           }
-        ].map(({ index, images, alt, title, onClick }, idx) => (
+        ].map(({ index, images, alt, onClick }, idx) => (
           <motion.div
             key={idx}
             onClick={onClick}
@@ -64,11 +66,7 @@ const InteractiveCard = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="">
-              <h3 className="text-black  dark:text-white">
-                {title}
-              </h3>
-            </div>
+            
             <AnimatePresence mode="wait">
               <motion.img
                 key={index}
