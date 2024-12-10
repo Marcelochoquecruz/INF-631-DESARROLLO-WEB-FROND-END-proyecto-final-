@@ -2,8 +2,6 @@ import { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FaMoon, 
-  FaSun, 
   FaHome, 
   FaUniversity, 
   FaImages, 
@@ -11,10 +9,7 @@ import {
   FaMoneyBillWave, 
   FaEnvelope,
   FaLightbulb,
-  FaRegLightbulb,
-  FaGlobe,
-  FaRocket
-} from 'react-icons/fa';
+  FaRegLightbulb} from 'react-icons/fa';
 import { ThemeContext } from '../ThemeContext';
 
 const HeaderNavigation = () => {
@@ -26,7 +21,7 @@ const HeaderNavigation = () => {
     { path: '/', label: 'Inicio', icon: FaHome },
     { path: '/proyectos', label: 'Proyectos', icon: FaImages },
     { path: '/tecnologias', label: 'Tecnologías', icon: FaUniversity },
-    { path: '/desarrollo-movil', label: 'Desarrollo Móvil', icon: FaUserGraduate },
+    { path: '/desarrollo-movil', label: 'Acerca de mi', icon: FaUserGraduate },
     { path: '/certificaciones', label: 'Certificaciones', icon: FaMoneyBillWave },
     { path: '/contacto', label: 'Contacto', icon: FaEnvelope }
   ];

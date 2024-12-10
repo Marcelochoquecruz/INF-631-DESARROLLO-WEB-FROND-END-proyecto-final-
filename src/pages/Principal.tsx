@@ -1,5 +1,3 @@
-// pages/Principal.tsx
-import Menu from '../components/menu';
 import Footer from '../components/footer';
 import Contenidop from './contenidop';
 
