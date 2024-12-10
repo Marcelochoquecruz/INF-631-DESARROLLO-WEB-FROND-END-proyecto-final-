@@ -1,0 +1,29 @@
+:root {
+  --background-light: white;
+  --background-dark: black;
+  --text-light: black;
+  --text-dark: white;
+  --primary-light: blue;
+  --primary-dark: darkblue;
+}
+
+body.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Example for buttons */
+button {
+  background-color: var(--primary-light);
+  color: var(--text-light);
+}
+
+body.dark button {
+  background-color: var(--primary-dark);
+  color: var(--text-dark);
+}
