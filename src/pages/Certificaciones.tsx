@@ -11,7 +11,7 @@ import {
 const AcademicAchievements: React.FC = () => {
   const certificaciones = [
     {
-      nombre: 'Desarrollo Web Full Stack',
+      nombre: 'Desarrollo Web html',
       institucion: 'FreeCodeCamp',
       fecha: '2022',
       descripcion: 'Certificación avanzada en desarrollo web frontend y backend',
@@ -37,7 +37,7 @@ const AcademicAchievements: React.FC = () => {
     {
       nombre: 'Matemáticas Aplicadas',
       institucion: 'Instituto Técnico Especializado',
-      estado: 'Diplomado Complementario',
+      estado: 'Estudiante Complementario',
       periodos: ['2019 - 2021', 'Especialización en Análisis Numérico'],
       icono: <Target className="w-12 h-12 text-indigo-600 dark:text-indigo-400" />
     }
