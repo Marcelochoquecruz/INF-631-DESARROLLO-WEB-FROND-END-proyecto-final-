@@ -479,7 +479,7 @@ const Tecnologias = () => {
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'} flex items-center justify-center p-4 font-sans`}>
       <div className="w-full max-w-6xl">
-      
+        <h1 className={`text-lg font-bold ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>Tecnologías</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {menuItems.map((item, index) => (
             <CategoryCard 

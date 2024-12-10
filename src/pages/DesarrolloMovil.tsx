@@ -1,97 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
-  FaAndroid, 
-  FaCode, 
-  FaDatabase, 
-  FaFlask, 
-  FaTools 
-} from 'react-icons/fa';
+  Rocket, 
+  Code, 
+  BookOpen, 
+  Globe, 
+  Lightbulb, 
+  Target 
+} from 'lucide-react';
 
-const DesarrolloMovil = () => {
-  const tecnologias = [
-    {
-      nombre: 'Flutter',
-      descripcion: 'Framework de desarrollo multiplataforma para aplicaciones móviles.',
-      icono: <FaAndroid className="text-5xl text-green-500" />
-    },
-    {
-      nombre: 'Dart',
-      descripcion: 'Lenguaje de programación optimizado para desarrollo de aplicaciones móviles.',
-      icono: <FaCode className="text-5xl text-blue-500" />
-    },
-    {
-      nombre: 'Firebase',
-      descripcion: 'Plataforma de backend como servicio para aplicaciones móviles.',
-      icono: <FaDatabase className="text-5xl text-yellow-500" />
-    },
-    {
-      nombre: 'Testing',
-      descripcion: 'Pruebas de integración y unitarias para garantizar calidad del software.',
-      icono: <FaFlask className="text-5xl text-purple-500" />
-    },
-    {
-      nombre: 'Herramientas de Estado',
-      descripcion: 'Provider, GetX, Bloc para gestión de estado en aplicaciones Flutter.',
-      icono: <FaTools className="text-5xl text-gray-500" />
-    }
-  ];
+const ProfessionalJourney: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  const proyectosMoviles = [
+  const professionalSections = [
     {
-      nombre: 'Aplicación de Servicios a Domicilio',
-      descripcion: 'App multiplataforma para solicitar servicios con geolocalización.',
-      tecnologias: ['Flutter', 'Firebase']
-    },
-    {
-      nombre: 'Juego Tic Tac Toe',
-      descripcion: 'Implementación del clásico juego para dispositivos móviles.',
-      tecnologias: ['Flutter', 'Android']
-    }
-  ];
-
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Desarrollo Móvil</h1>
-      
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Tecnologías</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {tecnologias.map((tech, index) => (
-            <div 
-              key={index} 
-              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-105"
-            >
-              <div className="flex justify-center mb-4">{tech.icono}</div>
-              <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">
-                {tech.nombre}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {tech.descripcion}
-              </p>
-            </div>
-          ))}
+      id: 'journey',
+      icon: <Rocket className="w-8 h-8 text-purple-500" />,
+      title: 'Mi Viaje Profesional',
+      content: (
+        <div className="space-y-6">
+          <div className="bg-white/5 p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition-all">
+            <h3 className="text-2xl font-bold mb-3 text-purple-300">El Camino de la Innovación</h3>
+            <p className="text-white/80 leading-relaxed">
+              Mi pasión por la tecnología comenzó en las aulas de la Universidad Autónoma Tomás Frías, donde descubrí el poder transformador de la informática. Cada línea de código, cada proyecto, es una oportunidad para resolver problemas y crear soluciones que impacten positivamente en mi comunidad.
+            </p>
+          </div>
+          <div className="bg-gradient-to-r from-purple-900/20 to-indigo-900/20 p-6 rounded-xl">
+            <blockquote className="italic text-white/70 border-l-4 border-purple-500 pl-4">
+              "La tecnología no se trata solo de código, se trata de construir puentes entre el conocimiento y la innovación social."
+            </blockquote>
+          </div>
         </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Proyectos Móviles</h2>
+      )
+    },
+    {
+      id: 'projects',
+      icon: <Code className="w-8 h-8 text-green-500" />,
+      title: 'Proyectos Destacados',
+      content: (
         <div className="grid md:grid-cols-2 gap-6">
-          {proyectosMoviles.map((proyecto, index) => (
+          {[
+            {
+              title: 'Aplicación de Servicios Locales',
+              description: 'Una solución móvil que conecta usuarios con servicios locales en Potosí, utilizando Flutter y Firebase.',
+              technologies: ['Flutter', 'Firebase', 'Mobile Development']
+            },
+            {
+              title: 'Plataforma Educativa Interactiva',
+              description: 'Sistema de gestión educativa con bases de datos en tiempo real, diseñado para mejorar el aprendizaje digital.',
+              technologies: ['Node.js', 'Real-time Databases', 'Educational Tech']
+            }
+          ].map((project, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transform transition-all duration-300 hover:scale-105"
+              className="bg-white/10 p-6 rounded-xl 
+                         transform transition-all duration-300 
+                         hover:scale-105 hover:bg-white/20 
+                         border border-green-500/20"
             >
-              <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">
-                {proyecto.nombre}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {proyecto.descripcion}
-              </p>
-              <div className="flex space-x-2">
-                {proyecto.tecnologias.map((tech, techIndex) => (
+              <h4 className="text-xl font-bold mb-3 text-green-300">{project.title}</h4>
+              <p className="text-white/80 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
                   <span 
-                    key={techIndex} 
-                    className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-sm"
+                    key={tech} 
+                    className="bg-green-900/50 text-green-300 
+                               px-3 py-1 rounded-full text-xs"
                   >
                     {tech}
                   </span>
@@ -100,9 +73,126 @@ const DesarrolloMovil = () => {
             </div>
           ))}
         </div>
-      </section>
+      )
+    },
+    {
+      id: 'skills',
+      icon: <Lightbulb className="w-8 h-8 text-yellow-500" />,
+      title: 'Habilidades y Competencias',
+      content: (
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/10 p-6 rounded-xl">
+              <h4 className="text-xl font-bold mb-4 text-yellow-300">Tecnologías</h4>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  'Python', 'JavaScript', 'Flutter', 
+                  'Java', 'C++', 'Node.js',
+                  'Firebase', 'MySQL', 'Git'
+                ].map((skill) => (
+                  <div 
+                    key={skill} 
+                    className="bg-yellow-900/30 text-yellow-300 
+                               p-3 rounded-lg text-center 
+                               transform transition-all 
+                               hover:scale-110"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white/10 p-6 rounded-xl">
+              <h4 className="text-xl font-bold mb-4 text-yellow-300">Habilidades Blandas</h4>
+              <ul className="space-y-2 text-white/80">
+                <li className="flex items-center space-x-2">
+                  <Target className="w-5 h-5 text-yellow-500" />
+                  <span>Resolución de Problemas</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <BookOpen className="w-5 h-5 text-yellow-500" />
+                  <span>Aprendizaje Continuo</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Globe className="w-5 h-5 text-yellow-500" />
+                  <span>Colaboración Interdisciplinaria</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-black 
+                    text-white p-4 md:p-12 overflow-hidden">
+      <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-xl 
+                      rounded-3xl shadow-2xl overflow-hidden 
+                      border border-white/10">
+        {/* Header */}
+        <header className="bg-gradient-to-r from-purple-800 to-indigo-900 
+                           py-16 px-8 text-center relative">
+          <div className="absolute top-6 right-6 flex space-x-4">
+            <a 
+              href="mailto:chelisimo27@gmail.com" 
+              className="hover:text-purple-300 transition"
+            >
+              Contacto
+            </a>
+            <a 
+              href="https://linkedin.com/in/marcelochoquecruz" 
+              target="_blank" 
+              className="hover:text-purple-300 transition"
+            >
+              LinkedIn
+            </a>
+          </div>
+          
+          <h1 className="text-4xl font-bold mb-4 text-transparent 
+                         bg-clip-text bg-gradient-to-r 
+                         from-purple-300 to-indigo-200">
+            Marcelo Choque Cruz
+          </h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            Estudiante de Ingeniería Informática | Innovador Tech | Desarrollador de Soluciones Digitales
+          </p>
+        </header>
+
+        {/* Interactive Sections */}
+        <div className="p-8">
+          <div className="flex justify-center space-x-4 mb-8">
+            {professionalSections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => setActiveSection(
+                  activeSection === section.id ? null : section.id
+                )}
+                className={`flex items-center space-x-3 px-6 py-3 
+                            rounded-full transition-all duration-300 
+                            ${activeSection === section.id 
+                              ? 'bg-purple-600 text-white scale-105' 
+                              : 'bg-white/10 hover:bg-white/20'}`}
+              >
+                {section.icon}
+                <span className="font-semibold">{section.title}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Detailed Section Content */}
+          {activeSection && (
+            <div className="animate-fade-in-bottom p-8 
+                            bg-white/5 rounded-3xl 
+                            border border-white/10">
+              {professionalSections.find(s => s.id === activeSection)?.content}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default DesarrolloMovil;
+export default ProfessionalJourney;
